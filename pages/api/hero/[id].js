@@ -9,7 +9,7 @@ export default async (req , res) => {
         switch (method) {
             case "GET":
                 try {
-                   const hero = Hero.findById(id)
+                   const hero = await Hero.findById(id)
                    if(!hero){
                     res.status(400).json({success:false })  
                    }
@@ -22,7 +22,7 @@ export default async (req , res) => {
                     try {
                        const hero = Hero.findByIdAndUpdate(id , req.body,{
                           new :true, 
-                          runValidators:true,
+                          runValidators:true
                        })
                        if(!hero){
                         res.status(400).json({success:false })  
@@ -34,7 +34,7 @@ export default async (req , res) => {
                     break;
                     case "DELETE":
                         try {
-                           const hero = Hero.deleteOne({_id :id})
+                           const hero = Hero.deleteOne({_id: id})
                            if(!hero){
                             res.status(400).json({success:false })  
                            }
