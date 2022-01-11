@@ -21,8 +21,8 @@ export default async (req , res) => {
                 case "PUT":
                     try {
                        const hero = Hero.findByIdAndUpdate(id , req.body,{
-                          new :true, 
-                          runValidators:true
+                          new :true , 
+                          runValidators: true
                        })
                        if(!hero){
                         res.status(400).json({success:false })  
