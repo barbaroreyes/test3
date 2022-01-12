@@ -18,7 +18,7 @@ useEffect(() =>{
       All Heroes 
      {heroes.map((item ,i )=>{
        return (
-         <div>
+         <div key={i}>
            <h1>{item.superHero}</h1>
           <h3>{item.realName}</h3>
          </div>
