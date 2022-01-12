@@ -3,7 +3,7 @@ import Hero from '../../../models/Hero';
 dbConnect()
 
 export default async (req , res) => {
-    const { query:{id},
+    const { query: {id},
             method
         } = req
         switch (method) {
